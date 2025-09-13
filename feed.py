@@ -23,7 +23,7 @@ xml_tree.SubElement(channel_element, 'link').text = link_prefix
 
 xml_tree.SubElement(channel_element, 'itunes:category', {'text': yaml_data['category']})
 
-for item in yaml_data[item]:
+for item in yaml_data['item']:
     item_element = xml_tree.SubElement(channel_element, 'item')
     xml_tree.SubElement(item_element, 'title').text = item['title']
     xml_tree.SubElement(item_element, 'itunes:author').text = yaml_data['author']
@@ -33,9 +33,9 @@ for item in yaml_data[item]:
     xml_tree.SubElement(item_element, 'title').text = item['title']
 
     enclosure - xml_tree.SubElement(item_element, 'enclosure', {
-        url: link_prefix + item[file],
-        type: 'audio/mpeg', 
-        length: item['length']
+        'url': link_prefix + item['file'],
+        'type': 'audio/mpeg', 
+        'length': item['length']
     }
 
 output_tree = xml_tree.ElementTree(rss_element)
