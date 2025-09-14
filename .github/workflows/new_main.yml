@@ -7,4 +7,4 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v5.0.0
       - name: Run Feed Generator
-        uses: eecourt/podcast-generator@main
+        uses: eecourt/podcast-generator@new_main
